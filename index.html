@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            height: 275;
+            width: 650;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-side {
+            padding: 2em;
+        }
+
+        .output-container {
+            padding: 2em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="left-side">
+            <form class="tipCalc-form">
+
+                <header>
+                    <h1>Calculate!</h1>
+                </header>
+
+                <label>Bill:</label>
+                <input id="bill" type="number" placeholder="0.00">
+
+                <label>Tip %:</label>
+                <input id="tip" type="number" name="tip">
+
+                <label>Size of Party:</label>
+                <input id="ppl" type="number" name="size">
+
+            </form>
+        </div>
+        <div class="output-container">
+
+            <div class="display-value" id="displayTip">
+                Tip
+            </div>
+
+            <div class="display-value" id="displayTotal">
+                Total
+            </div>
+
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
