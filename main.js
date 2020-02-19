@@ -1,11 +1,11 @@
-// Your scripts here
-
 // Get references to elements
 const inputBill = document.getElementById('bill')
 const inputTip = document.getElementById('tip')
 const inputPpl = document.getElementById('ppl')
+
 const displayTotal = document.getElementById('displayTotal')
 const displayTip = document.getElementById('displayTip')
+const displaySplit = document.getElementById('displaySplit')
 
 const tipPercent = parseInt(inputTip.value)
 const bill = parseFloat(inputBill.value)
@@ -14,12 +14,19 @@ const people = parseInt(inputPpl.value)
 
 // Event handlers
 
-inputBill.addEventListener('input', handleBill)
-inputTip.addEventListener('input', handleTip)
-inputPpl.addEventListener('input', handlePpl)
+inputBill.addEventListener('change', function (e) {
+    handleBill()
+})
+
+inputTip.addEventListener('change', calculateTip())
+inputPpl.addEventListener('change', handlePpl)
 
 // Functions
 let bill = 0
+
+function calculateTotal() {
+    const bill = parseFloat
+}
 
 function handleBill(e) {
     const newBill = parseFloat(e.target.value)

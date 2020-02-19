@@ -3,23 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tip Calc</title>
     <style>
+        body{
+            font-family: Helvetica;
+        }
+
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
         main {
             height: 275;
             width: 650;
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: center;
+            border-style: hidden;
+            margin: 5em;
         }
 
         .left-side {
             padding: 2em;
+            border-style: solid;
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
         }
 
         .output-container {
+            height: 275;
+            border-style: solid;
             padding: 2em;
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
         }
 
         form {
@@ -27,36 +49,92 @@
             flex-direction: column;
         }
 
+        input {
+            width: 15em;
+        }
+
+        .input-with-buttons {
+            display: flex;
+            flex-direction: row;
+        }
+
+        hr {
+            border: 0.5px solid rgb(48, 48, 48);
+        }
+
+        .display-tip {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        .display-total {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        .display-split {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
     </style>
 </head>
 <body>
+    <header>
+        <h1>Calculate the Tip and Split the Bill</h1>
+    </header>
     <main>
         <div class="left-side">
-            <form class="tipCalc-form">
+            <div>
+                <form class="tipCalc-form">
 
-                <header>
-                    <h1>Calculate!</h1>
-                </header>
+                    <div class="input-container">
+                        <label>Bill Amount:</label>
+                        <div class="input-with-buttons">
+                            <button>-</button>
+                            <input id="bill" type="number" placeholder="0.00">
+                            <button>+</button>
+                        </div>
+                    </div>
 
-                <label>Bill:</label>
-                <input id="bill" type="number" placeholder="0.00">
+                    <div class="input-container">
+                        <label>Tip %:</label>
+                        <div class="input-with-buttons">
+                            <button>-</button>
+                            <input id="tip" type="number" name="tip">
+                            <button>+</button>
+                        </div>
+                    </div>
 
-                <label>Tip %:</label>
-                <input id="tip" type="number" name="tip">
-
-                <label>Size of Party:</label>
-                <input id="ppl" type="number" name="size">
-
-            </form>
+                    <div class="input-container">
+                        <label>Size of Party:</label>
+                        <div class="input-with-buttons">
+                            <button>-</button>
+                            <input id="ppl" type="number" name="size">
+                            <button>+</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="output-container">
 
-            <div class="display-value" id="displayTip">
-                Tip
-            </div>
+            <div>Tip:
+                <div class="display-tip" id="displayTip"></div>
+            </div><br>
 
-            <div class="display-value" id="displayTotal">
-                Total
+            <div>Total:
+                <div class="display-total" id="displayTotal"></div>
+            </div><br>
+            <!-- <hr> -->
+            <div>Per person: 
+                <div class="display-split" id="displaySplit"></div>
+                
             </div>
 
         </div>
